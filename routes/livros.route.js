@@ -5,9 +5,9 @@ module.exports = function (app) {
     app.get("/livros", function (req, res) {
         livroModel.find(function (error, response) {
             if (error) {
-                res.json(error);
+                res.json(error).status(500);
             }
-            res.json(response);
+            res.json(response).status(200);
         });
     });
 
@@ -22,9 +22,9 @@ module.exports = function (app) {
         const livroExec = new livroModel(livroModelo);
         livroExec.save(function (error, response) {
             if (error) {
-                res.json(error);
+                res.json(error).status(500);
             }
-            res.json(response);
+            res.json(response).status(200);
         });
 
 

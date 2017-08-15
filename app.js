@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const portApp = 4000;
+const portApp = 3000;
 
 const serverConfig = require("./config/server.config")(app);
 
@@ -10,3 +10,5 @@ const livrosRoute = require("./routes/livros.route")(app);
 app.listen(portApp, function(){
     console.log(`Servidor rodando na porta ${portApp}`);
 });
+
+module.exports = app;
